@@ -826,6 +826,16 @@ __STATIC_INLINE void LL_RCC_HSI_DisableInStopMode(void)
 }
 
 /**
+  * @brief  Check if HSI in stop mode is enabled
+  * @rmtoll CR           HSIKERON        LL_RCC_HSI_IsEnabledInStopMode
+  * @retval State of bit (1 or 0).
+  */
+__STATIC_INLINE uint32_t LL_RCC_HSI_IsEnabledInStopMode(void)
+{
+  return ((READ_BIT(RCC->CR, RCC_CR_HSIKERON) == (RCC_CR_HSIKERON)) ? 1UL : 0UL);
+}
+
+/**
   * @brief  Enable HSI Divider (it divides by 4)
   * @rmtoll CR           HSIDIVEN       LL_RCC_HSI_EnableDivider
   * @retval None
